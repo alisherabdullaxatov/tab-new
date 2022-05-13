@@ -3,32 +3,22 @@
     margin: 0;
     box-sizing: border-box;
 }
-
 .container{
     width: 700px;
-    
     margin: 200px auto;
-    
     background-color: white;
     overflow: hidden;
-
-    
-
 }
  body{
      background-color: #CECECE;
  }
-
-
 #tabs{
     display: flex;
     width: 100%;
     justify-content: center;
      background-color: blueviolet;
      margin-top: 40px;  
-        
-    }
-
+ }
 .tab{
     padding: 20px 30px;
     color:white;
@@ -36,71 +26,63 @@
     font-weight: bold;
     border-bottom: 4px solid blueviolet;
     border-top: 4px solid blueviolet;
-    
-    
-
+    cursor: pointer;
 }
 .tab.active{
     color: #D8C5FE;
    border-top: 4px solid black;
    border-bottom:4px solid black;
-   
 }
 
 .tab-text{
     width: 700px;
     height: 350px;
     padding: 30px;
-    
     position: relative;
 }
 
 .text{
-    position: absolute;
-    transform: translateX(700px);
-   
-    /* transform: translateY(30px); */
+position: absolute;
+transform: translateX(700px);
 width: 640px;
 height: 200px; 
-    border: 2px solid black;
+/* border: 2px solid black; */
+animation: animat2 1s ease;
+
 }
 .text h1{
     margin: 30px 0;
-    
 }
-.text.show{
+.text.active{
 display: block;
-    animation: animat 1s ease;
-    transform: translateX(0);
+animation: animat 1s ease;
+transform: translateX(0);
 }
-.text.hide{
-display: block;
-    animation: animat2 1s ease;
-}
+/* .text.hide{
+
+animation: animat2 1s ease;
+} */
 @keyframes animat{
      from{
-         transform: translateX(700px);
-         border-top-left-radius: 100%;
-         border-bottom-right-radius: 100%;
-         
+         transform: translateX(700px); 
+         opacity: 0.3;
+              
      }
      to{
     transform: translateX(0);  
-      
-    }
+    opacity: 1;
+ }
 }
 
 @keyframes animat2{
     from{
         transform: translateX(0);
-        border-top-left-radius: 0;
-        border-bottom-right-radius: 0;
-      
-    }
+        opacity: 0.3;
+  }
     to{
    transform: translateX(700px); 
-   border-top-left-radius: 100%;
-   border-bottom-right-radius: 100%;    
+   opacity: 1;
+      
    }
 }
 
@@ -110,7 +92,6 @@ display: block;
     grid-gap: 40px;
 }
 .text .about div  {
-    
     height:90px;
     font-size: 40px;
     font-weight: 900;
@@ -123,26 +104,19 @@ display: block;
     z-index: 1;
     color: white;
     overflow: hidden;
-    
+    cursor: pointer;
 }
-
 .text .about div p{
     transition-duration: 1s;
 }
 .tab-text .text:nth-child(3){
     border: none;
-    
-    
 }
 .tab-text .text .about div p::before{
 position: absolute;
 content: '';
-
-
-
 margin-top: 3px;
 margin-left: -8px;
-
 width: 40px;
 height: 40px;
 border-radius: 100%;
@@ -150,18 +124,14 @@ background-color: blueviolet;
 /* transform: scale(0); */
 transition-duration: 1s;
 z-index: -1;
-
-
 }
 .tab-text .text .about div:hover p::before{
 transform: scale(5);
-
 }
 
 .tab-text .text .about div:hover p   {
           transform: scale(9);
-          
-}
+        }
 
 
 .tab-text .text .about div p i{
@@ -182,7 +152,6 @@ transform: scale(5);
     color: white;
     z-index: 1;
     display: block;
-    
 }
 .tab-text .text .about div em{
     position: absolute;
@@ -199,11 +168,22 @@ transition-delay: 0.3s;
 transition-duration: 0.4s;
 z-index: 1;
 overflow: hidden;
-
 }
 
 .tab-text .text .about div:hover em{
     height: 20px;
-    
-    
+}
+.tab-text .text  ul li{
+    font-size: 25px;
+    margin: 30px 0;
+}
+.tab-text .text img{
+    width: 100%;
+    height: 100%;
+}
+.tab-text .text:nth-child(2){
+    height: 300px;
+}
+.tab-text .text:nth-child(2) h1{
+    margin: 3px 0;
 }
